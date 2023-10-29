@@ -1,0 +1,433 @@
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
+
+/* Root-level variables for colors and gradients */
+:root {
+    --Scissors-Gradient: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+    --Paper-Gradient: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+    --Rock-Gradient: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+    --Lizard-Gradient: linear-gradient(hsl(261, 73%, 60%), hsl(261, 72%, 63%));
+    --Spock-Gradient: linear-gradient(hsl(189, 59%, 53%), hsl(189, 58%, 57%));
+    --Dark-Text: hsl(229, 25%, 31%);
+    --White-Text: hsl(0, 0%, 100%);
+    --Score-Text: hsl(229, 64%, 46%);
+    --Header-Outline: hsl(217, 16%, 45%);
+    --Radial-Gradient: linear-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+}
+
+/* Universal Styles for All Elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--White-Text);
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: 600;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* Body Styles */
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+.wrapper {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    background: var(--Radial-Gradient);
+    padding: 10px 0;
+}
+
+/* Header Design*/
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 40vw;
+    min-width: 425px;
+    padding: .7rem 1rem;
+    border: 3px solid var(--Header-Outline);
+    border-radius: 9px;
+}
+
+/* Header Text Styling*/
+section.normal h1 {
+    font-size: 1.9rem;
+    line-height: .8;
+    text-transform: uppercase;
+}
+
+/* Score Board Styling*/
+section.score-board {
+    width: 9.5rem;
+    height: 95%;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    background-color: var(--White-Text);
+    padding: .5rem;
+}
+
+/* Score Text Styling */
+section.score-board p {
+    color: var(--Score-Text);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+}
+
+/* Score Number Styling */
+section.score-board #score {
+    color: var(--Dark-Text);
+    font-size: 4rem;
+}
+
+/* Board Design*/
+main.board {
+    height: 30vw;
+    min-height: 425px;
+    min-width: 425px;
+    overflow-Y: hidden;
+}
+
+/* Game Steps*/
+.step {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Game Options */
+.options {
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    padding-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+/* Image Containers*/
+.options .img-container {
+    background-color: var(--White-Text);
+    height: 75%;
+    width: 75%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px -5px #B8BDD2;
+}
+
+/* Paper Option*/
+.paper {
+    background: var(--Paper-Gradient);
+    box-shadow: 0px 5px #2945C2;
+}
+
+/* Scissor Option */
+.scissor {
+    background: var(--Scissors-Gradient);
+    box-shadow: 0px 5px #C46E1A;
+}
+
+/* Rock Option */
+.rock {
+    background: var(--Rock-Gradient);
+    box-shadow: 0px 5px #9F1535;
+}
+
+.lizard {
+    background: var(--Lizard-Gradient);
+    box-shadow: 0px 5px #5E37A9;
+}
+
+.spock {
+    background: var(--Spock-Gradient);
+    box-shadow: 0px 5px #2F8BAA;
+}
+
+/* Stylish Text */
+p {
+    font-weight: 700;
+    letter-spacing: .2rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Game Step One */
+#step-one {
+    background: url("./images/bg-pentagon.svg") no-repeat center;
+}
+
+/* Paper Position */
+#paper {
+    position: absolute;
+    top: 1.5rem;
+}
+
+/* Scissor Position */
+#scissor {
+    position: absolute;
+    top: 8rem;
+    right: .5rem;
+}
+
+/* Rock Position */
+#rock {
+    position: absolute;
+    right: 3rem;
+    bottom: 2rem;
+}
+
+/* Lizard Position */
+#lizard {
+    position: absolute;
+    left: 3rem;
+    bottom: 2rem;
+}
+
+/* Spock Position */
+#spock {
+    position: absolute;
+    top: 8rem;
+    left: .5rem;
+}
+
+/* Game Step Two */
+#step-two {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 2.5rem;
+}
+
+/* Game Options in Step Two */
+#step-two .options {
+    height: 155px;
+    width: 155px;
+    background-color: hsla(0, 0%, 0%, 0.155);
+    margin: 2.5rem auto 0;
+}
+
+/* Battle Result */
+.result {
+    display: none;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+/* Play Again Button */
+#play-again {
+    outline: none;
+    border: none;
+    padding: .7rem 2.8rem;
+    color: #DD4062;
+    background-color: var(--White-Text);
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Cover */
+.cover {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    background-color: #00000058;
+    display: none;
+}
+
+/* Game Rules Modal */
+.modal {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--White-Text);
+    border-radius: 5px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.5rem;
+    z-index: 1;
+    transition: 0.3s;
+}
+
+/* Game Rules Modal Header */
+.modal .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Game Rules Modal Header */
+.modal .header p {
+    color: var(--Dark-Text);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* Close Button in Game Rules Modal */
+.modal .header img {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Close Button Hover Effect */
+.modal .header img:hover {
+    scale: 1.1;
+}
+
+/* Footer Design */
+footer {
+    width: 95%;
+    text-align: right;
+}
+
+/* Rules Button in Footer */
+footer button {
+    padding: .35rem 1.65rem;
+    outline: none;
+    border: 2px solid var(--Header-Outline);
+    border-radius: 5px;
+    background-color: transparent;
+    text-transform: uppercase;
+    font-size: 80%;
+    letter-spacing: .1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-right: .9rem;
+}
+
+/* Rules Button Hover Effect */
+footer button:hover {
+    scale: 1.1;
+}
+
+/* Responsive Design */
+
+@media (width<=540px) {
+
+    .options {
+        max-width: 130px;
+        max-height: 130px;
+    }
+
+    #step-two .options {
+        max-width: 140px;
+        max-height: 140px;
+    }
+
+    .result {
+        position: absolute;
+        bottom: 1rem;
+    }
+
+    .result p {
+        font-size: 1.8rem;
+    }
+
+    footer {
+        text-align: center;
+    }
+
+}
+
+@media (width<=426px) {
+
+    header {
+        min-width: 98%;
+    }
+
+    main.board {
+        min-width: 100%;
+    }
+
+    .options {
+        max-width: 120px;
+        max-height: 120px;
+    }
+
+    /* Paper Position  */
+    #paper {
+        position: absolute;
+        top: 1.5rem;
+    }
+
+    /* Scissor Position */
+    #scissor {
+        position: absolute;
+        top: 8rem;
+        right: 0rem;
+    }
+
+    /* Rock Position */
+    #rock {
+        position: absolute;
+        right: 2.5rem;
+        bottom: 1.5rem;
+    }
+
+    /* Lizard Position */
+    #lizard {
+        position: absolute;
+        left: 2rem;
+        bottom: 1.5rem;
+    }
+
+    /* Spock Position */
+    #spock {
+        position: absolute;
+        top: 8rem;
+        left: 0rem;
+    }
+
+    /* Game Step Two */
+    #step-two {
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .modal {
+        height: 100vh;
+        width: 100%;
+        padding-top: 50px;
+        justify-content: flex-start;
+        gap: 2.5rem;
+    }
+
+    .modal .header {
+        justify-content: center;
+    }
+
+    .modal .header img {
+        position: absolute;
+        bottom: 10%;
+        left: 49%;
+        scale: 1.1;
+    }
+}

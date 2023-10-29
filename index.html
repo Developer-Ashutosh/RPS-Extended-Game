@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="🤘📄✂️ CodeCrafted Showdown: Prepare to unleash your coding wizardry in an epic duel of Rock, Paper, Scissors, or the extended battle of Rock, Paper, Scissors, Lizard, Spock. Engage in this digital showdown with the mightiest keystrokes! 🎮💻🔥 - Ashutosh Kumar!">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/logo-bonus.svg">
+
+  <title>RPS Extended Game | @Developer Ashutosh</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <section class="normal">
+        <h1>Rock</h1>
+        <h1>Paper</h1>
+        <h1>Scissors</h1>
+        <h1 class="bonus">Lizard</h1>
+        <h1 class="bonus">Spock</h1>
+      </section>
+      <section class="score-board">
+        <p>Score</p>
+        <div id="score">00</div>
+      </section>
+    </header>
+
+    <main class="board">
+
+      <div class="step" id="step-one">
+        <div class="options paper" id="paper">
+          <div class="img-container">
+            <img src="./images/icon-paper.svg" alt="Paper Btn">
+          </div>
+        </div>
+        <div class="options scissor" id="scissor">
+          <div class="img-container">
+            <img src="./images/icon-scissor.svg" alt="Scissor Btn">
+          </div>
+        </div>
+        <div class="options rock" id="rock">
+          <div class="img-container">
+            <img src="./images/icon-rock.svg" alt="Rock Btn">
+          </div>
+        </div>
+        <div class="options lizard bonus" id="lizard">
+          <div class="img-container">
+            <img src="./images/icon-lizard.svg" alt="Rock Btn">
+          </div>
+        </div>
+        <div class="options spock bonus" id="spock">
+          <div class="img-container">
+            <img src="./images/icon-spock.svg" alt="Rock Btn">
+          </div>
+        </div>
+      </div>
+
+      <!-- Adding main codes dynamically -->
+
+    </main>
+
+    <div class="modal">
+      <div class="header">
+        <p>Rules</p>
+        <img src="./images/icon-close.svg" alt="Close Btn" id="close-btn">
+      </div>
+      <img src="./images/image-rules-bonus.svg" alt="Rules" id="rules">
+    </div>
+
+    <div class="cover"></div>
+
+    <footer>
+      <button id="rules-btn">Rules</button>
+      <button id="version-btn">Regular</button>
+    </footer>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
