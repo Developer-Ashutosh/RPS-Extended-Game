@@ -126,7 +126,7 @@ const playAgain = () => {
         if (versionBtn.textContent == "Regular") {
             document.querySelector("#step-one").innerHTML += `
         <div class="options lizard bonus" id="lizard">
-            <div class "img-container">
+            <div class="img-container">
                 <img src="./images/icon-lizard.svg" alt="Rock Btn">
             </div>
         </div>
